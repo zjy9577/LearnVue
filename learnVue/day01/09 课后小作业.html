@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课后小作业</title>
+</head>
+
+<style>
+    .color {
+        color: red;
+    }
+</style>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in movies" :class="{color:item.isChangeRed}" @click="changeColor(index)">{{item.name}}</li>
+        </ul>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app=new Vue({
+             el:"#app",
+             data:{
+                 movies:[
+                     {
+                         name:"火影忍者",
+                         isChangeRed:false
+                     },{
+                         name:"哆啦A梦",
+                         isChangeRed:false
+                     },{
+                         name:"喜羊羊与灰太狼",
+                         isChangeRed:false
+                     }
+                 ],
+                 message:'哈哈哈',
+             },
+            methods:{
+                 changeColor:function (index) {
+                     if(this.movies[index].isChangeRed==true){
+                         this.movies[index].isChangeRed=false;
+                     }else{
+                         this.movies[index].isChangeRed=true;
+                     }
+                 }
+            }
+        });
+    </script>
+</body>
+</html>
