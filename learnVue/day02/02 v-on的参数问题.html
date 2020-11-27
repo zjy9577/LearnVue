@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on的参数问题</title>
+</head>
+<body>
+<div id="app">
+    <button @click="btn1('asd')">按钮1</button>
+    <button @click="btn2">按钮2</button>
+    <button @click="btn3('asd',$event)">按钮3</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+     const app=new Vue({
+         el:"#app",
+         data:{
+
+         },
+         methods:{
+             btn1(req){
+                 console.log(req);
+             },
+             btn2(req){
+                 console.log(req);
+             },
+             btn3(req,event){
+                 console.log(req);
+                 console.log(event);
+             }
+         }
+     });
+</script>
+</body>
+</html>

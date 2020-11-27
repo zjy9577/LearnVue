@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>v-for遍历对象</title>
 </head>
 <body>
 <div id="app">
-    <!--只会渲染一次，不会因为message的改变而发生变化了。。。-->
-    <h1 v-once>{{message}}</h1>
-    <h1 >{{message}}</h1>
+    <ul>
+        <li v-for="(value,key) in student">{{value}} {{key}}</li>
+    </ul>
 </div>
 <script src="../js/vue.js"></script>
 <script>
      const app=new Vue({
          el:"#app",
          data:{
-             message:"周俊勇牛逼"
+             student:{
+                 name:"zhouzhou",
+                 age:"22",
+                 height:1.65
+             }
          }
      });
 </script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if和v-show的区别</title>
+</head>
+<body>
+<div id="app">
+    <h1 v-if="isShow">{{message}}</h1>
+    <h1 v-show="isShow">{{message}}</h1>
+    <button @click="change">{{show}}</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+     const app=new Vue({
+         el:"#app",
+         data:{
+             message:"你好",
+             isShow:true,
+             show:"隐藏"
+         },
+         methods:{
+             change(){
+                 this.isShow=!this.isShow;
+                 if(this.show=="隐藏"){
+                     this.show="显示";
+                 }else{
+                     this.show="隐藏";
+                 }
+             }
+         }
+     });
+</script>
+</body>
+</html>
