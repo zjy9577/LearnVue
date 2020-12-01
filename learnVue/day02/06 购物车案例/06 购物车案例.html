@@ -4,16 +4,42 @@
     <meta charset="UTF-8">
     <title>购物车案例</title>
     <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
     <div id="app">
-        <table>
-            <thead>
-
-            </thead>
-        </table>
+        <div v-if="books.length">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>书籍名称</th>
+                        <th>出版日期</th>
+                        <th>单价</th>
+                        <th>购买数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item,index) in books">
+                        <td>{{index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.date}}</td>
+                        <td>{{item.price | showPrice}}</td>
+                        <td>
+                            <button @click="subtract(index)" :disabled="item.count<=1">-</button>
+                            {{item.count}}
+                            <button @click="add(index)">+</button>
+                        </td>
+                        <td><button @click="remove(index)">移除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>总价格:{{total | showPrice}}</h2>
+        </div>
+        <h1 v-else>购物车没东西，赶快去买东西吧</h1>
     </div>
-    <script src="/js/vue.js"></script>
-    <script src="main.js"></script>
 </body>
+<script src="../../js/vue.js"></script>
+<script src="main.js"></script>
 </html>
