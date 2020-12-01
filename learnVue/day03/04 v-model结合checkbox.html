@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model结合checkbox</title>
+</head>
+<body>
+<div id="app">
+    <label>
+        <input type="checkbox" value="篮球" v-model="hobbies">篮球
+        <input type="checkbox" value="足球" v-model="hobbies">足球
+        <input type="checkbox" value="羽毛球" v-model="hobbies">羽毛球
+        <input type="checkbox" value="乒乓球" v-model="hobbies">乒乓球
+    </label>
+    <h2>你的兴趣爱好有:{{hobbies}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+     const app=new Vue({
+         el:"#app",
+         data:{
+             hobbies:[]
+         }
+     });
+</script>
+</body>
+</html>

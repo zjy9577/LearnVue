@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件数据的存放问题</title>
+</head>
+<body>
+<div id="app">
+    <haha></haha>
+    <haha></haha>
+    <haha></haha>
+    <haha></haha>
+</div>
+
+<template id="haha">
+    <div>
+        <h4>{{name}}</h4>
+        <p>好帅</p>
+        <p>好帅</p>
+        <p>好帅</p>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    Vue.component("haha",{
+       template:'#haha',
+        data(){
+           return{
+               name:'周俊勇'
+           }
+        }
+    });
+     const app=new Vue({
+         el:"#app",
+         data:{
+
+         }
+     });
+</script>
+</body>
+</html>

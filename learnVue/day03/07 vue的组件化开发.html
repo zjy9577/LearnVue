@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue的组件化开发</title>
+</head>
+<body>
+<div id="app">
+    <zhouzou></zhouzou>
+    <zhouzou></zhouzou>
+    <zhouzou></zhouzou>
+    <zhouzou></zhouzou>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const cpt=Vue.extend({
+        template:`
+            <div>
+                <h1>周俊勇</h1>
+                <h1>周俊勇</h1>
+                <h1>周俊勇</h1>
+                <h1>牛逼</h1>
+            </div>
+            <br>
+            `
+    });
+    Vue.component('zhouzou',cpt);
+     const app=new Vue({
+         el:"#app",
+         data:{
+
+         }
+     });
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model结合select还有值绑定</title>
+</head>
+<body>
+<div id="app">
+    <select v-model="fruit">
+        <option value="香蕉">香蕉</option>
+        <option value="苹果">苹果</option>
+        <option value="橘子">橘子</option>
+        <option value="葡萄">葡萄</option>
+    </select>
+    <br>
+    <h1>{{fruit}}</h1>
+    <br>
+    <select v-model="fruits" multiple="multiple">
+        <option value="香蕉">香蕉</option>
+        <option value="苹果">苹果</option>
+        <option value="橘子">橘子</option>
+        <option value="葡萄">葡萄</option>
+    </select>
+    <br>
+    <h1>{{fruits}}</h1>
+    <br>
+    <!--值绑定-->
+    <label v-for="item in hobbies" :for="item">
+        <input type="checkbox" :id="item" :value="item" v-model="data">{{item}}
+    </label>
+    <br>
+    <h1>{{data}}</h1>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+     const app=new Vue({
+         el:"#app",
+         data:{
+             fruit:'香蕉',
+             fruits:[],
+             hobbies:['篮球','足球','羽毛球','乒乓球','橄榄球'],
+             data:[]
+         }
+     });
+</script>
+</body>
+</html>
