@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <obj>
+        <button>按钮</button>
+    </obj>
+    <obj>
+        <p>张文彬好美</p>
+    </obj>
+    <obj>
+        <input type="text"/>
+    </obj>
+    <!--给插槽设置默认值-->
+    <obj></obj>
+    <obj></obj>
+    <obj></obj>
+    <obj></obj>
+</div>
+
+<template id="obj">
+    <div>
+        <h2>插槽的基本使用</h2>
+        <slot>
+            <button>我是插槽按钮</button>
+        </slot>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const obj={
+        template:"#obj"
+    };
+    const app=new Vue({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            obj
+        }
+    });
+</script>
+</body>
+</html>

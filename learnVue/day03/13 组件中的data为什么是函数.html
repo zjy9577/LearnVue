@@ -28,14 +28,14 @@
   }
   Vue.component('cpn', {
     template: '#cpn',
-    // data() {
-    //   return {
-    //     counter: 0
-    //   }
-    // },
     data() {
-      return obj
+      return {
+        counter: 0
+      }
     },
+    // data() {
+    //   return obj
+    // },
     methods: {
       increment() {
         this.counter++

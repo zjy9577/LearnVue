@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父组件向子组件传递数据</title>
+</head>
+<body>
+<div id="app">
+    <cop :name="name" :shuai="shuai" :shuai1="shuai1"></cop>
+    <cop :name="name" :shuai="shuai" :shuai1="shuai1"></cop>
+    <cop :name="name" :shuai="shuai" :shuai1="shuai1"></cop>
+</div>
+
+<!--定义模板-->
+<template id="tmp">
+    <div>
+        <h2>{{name}}</h2>
+        <h1>{{shuai}}</h1>
+        <h2>{{shuai1}}</h2>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+     Vue.component('cop',{
+         template:"#tmp",
+         // props:["name","shuai","shuai1"]//第一种传参方式，不推荐
+         props:{
+             name:{
+                 type:String//设置传参类型
+             },
+             shuai:{
+                 type: Number,
+                 default:1,//设置默认值
+                 required:true//数据是否必穿
+             },
+             shuai1:{
+                 type: Array,
+                 default:[],//设置默认值
+                 required:true//数据是否必穿
+             }
+         },
+         data(){
+             return {
+
+             }
+         }
+     });
+     // const cop={
+     //     template:"#tmp",
+     //     // props:["name","shuai","shuai1"]//第一种传参方式，不推荐
+     //     props:{
+     //         name:{
+     //             type:String//设置传参类型
+     //         },
+     //         shuai:{
+     //             type: Number,
+     //             default:1,//设置默认值
+     //             required:true//数据是否必穿
+     //         },
+     //         shuai1:{
+     //             type: Array,
+     //             default:[],//设置默认值
+     //             required:true//数据是否必穿
+     //         }
+     //     },
+     //     data(){
+     //         return {
+     //
+     //         }
+     //     }
+     // };
+     const app=new Vue({
+         el:"#app",
+         data:{
+             name:'周俊勇',
+             shuai:3,
+             shuai1:[1,2,3]
+         },
+         // components:{
+         //     cop
+         // }
+     });
+</script>
+</body>
+</html>
